@@ -1,6 +1,7 @@
 var username = "dave";
 var resultsPerPage = 5;
 var currentPage = 1;
+var apiKey = "b25b959554ed76058ac220b7b2e0a026";
 
 var owned = new Array();
 var displayed = new Array();
@@ -33,7 +34,7 @@ function initialFetch() {
 }
 
 function fetch(limit, page) {
-    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=user.gettopalbums&user=" + username + "&limit=" + limit + "&page=" + page + "&api_key=b25b959554ed76058ac220b7b2e0a026", function success(data) {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=user.gettopalbums&user=" + username + "&limit=" + limit + "&page=" + page + "&api_key="+apiKey, function success(data) {
         if (data.error) {
             alert(data.message);
         }
@@ -84,7 +85,7 @@ function display(album) {
 function getBuyLink(album, albumId) {
     var artist = album.artist.name;
     var albumName = album.name;
-    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=album.getbuylinks&artist=" + escape(artist) + "&album=" + escape(albumName) + "&country=united%20kingdom&api_key=b25b959554ed76058ac220b7b2e0a026", function success(data) {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=album.getbuylinks&artist=" + escape(artist) + "&album=" + escape(albumName) + "&country=united%20kingdom&api_key="+apiKey, function success(data) {
         if (data.error) {
             alert(data.message);
         }
@@ -103,7 +104,7 @@ function getBuyLink(album, albumId) {
 function getAlbumInfo(album, albumId) {
     var artist = album.artist.name;
     var albumName = album.name;
-    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=album.getinfo&artist=" + escape(artist) + "&album=" + escape(albumName) + "&api_key=b25b959554ed76058ac220b7b2e0a026", function success(data) {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=album.getinfo&artist=" + escape(artist) + "&album=" + escape(albumName) + "&api_key="+apiKey, function success(data) {
         if (data.error) {
             alert(data.message);
         }
