@@ -10,3 +10,6 @@ Get a list of your favourite albums that you have yet to buy (via Last.fm)
 3. Buy the albums you don't own
 
 4. goto 2.
+
+
+[Demo](http://martinw.net/PutYourMoneyWhereYourEarsAre)
