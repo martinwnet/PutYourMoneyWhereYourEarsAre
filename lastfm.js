@@ -69,7 +69,7 @@ function displayAlbums() {
 function display(album) {
     var albumId = (album.mbid == "") ? albumId = fakeId++ : album.mbid;
     if ($.inArray(albumId, owned) == -1 && $.inArray(albumId, displayed) == -1) {
-        $("#albums").append("<li id=" + albumId + ">" + album.artist.name + " - " + album.name + "<br /><a href='#' id='removeLink' onclick='remove(\"" + albumId + "\");'>own</a> " + "</li>");
+        $("#albums").append("<li id=" + albumId + ">" + album.artist.name + " - " + album.name + "<br /><a href='#' id='removeLink' onclick='remove(\"" + albumId + "\");return false;'>own</a> " + "</li>");
         displayed.push(albumId);
         if (album.image[3]) {
             var imgUrl = album.image[3]["#text"];
