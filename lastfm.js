@@ -1,7 +1,7 @@
 var username = "dave";
 var resultsPerPage = 5;
 var currentPage = 1;
-var apiKey = "b25b959554ed76058ac220b7b2e0a026";
+var apiKey = "830baea2583ced9ccfee905eb1a9667c";
 
 var owned = new Array();
 var displayed = new Array();
